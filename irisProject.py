@@ -39,9 +39,8 @@ prediction_proba = clf.predict_proba(df)
 st.subheader('Class labels and their corresponding index number')
 
 lst = ['Iris-setosa','Iris-versicolor','Iris-virginica']
-  
-# Calling DataFrame constructor on list
-df1 = pd.DataFrame(lst)
+
+df1 = pd.DataFrame(lst, index =['a', 'b', 'c', 'd', 'e', 'f', 'g'], columns =['Species'])
 df1
 
 st.subheader('Prediction')
