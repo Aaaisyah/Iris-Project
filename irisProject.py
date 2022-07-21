@@ -45,7 +45,7 @@ df1
 
 st.subheader('Prediction')
 #st.write(iris.target_names[prediction])
-st.write(prediction)
+pd.DataFrame(prediction, index =['a', 'b', 'c'], columns =['Species'])
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
