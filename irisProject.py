@@ -37,12 +37,7 @@ prediction = clf.predict(df)
 prediction_proba = clf.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-
-chart_data = pd.DataFrame(
-     np.random.randn(20, 3),
-     columns=['Iris-setosa','Iris-versicolor','Iris-virginica'])
-
-st.line_chart(chart_data)
+st.write(['Iris-setosa','Iris-versicolor','Iris-virginica'])
 
 st.subheader('Prediction')
 #st.write(iris.target_names[prediction])
