@@ -40,7 +40,7 @@ st.subheader('Class labels and their corresponding index number')
 
 lst = ['Iris-setosa','Iris-versicolor','Iris-virginica']
 
-df1 = pd.DataFrame(lst, index =['a', 'b', 'c', 'd', 'e', 'f', 'g'], columns =['Species'])
+df1 = pd.DataFrame(lst, index =['a', 'b', 'c'], columns =['Species'])
 df1
 
 st.subheader('Prediction')
