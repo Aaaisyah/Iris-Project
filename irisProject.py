@@ -37,10 +37,12 @@ prediction = clf.predict(df)
 prediction_proba = clf.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-df1 = pd.DataFrame(index=0,
-    columns=(['Iris-setosa','Iris-versicolor','Iris-virginica'])
 
-st.table(df1)
+lst = ['Iris-setosa','Iris-versicolor','Iris-virginica']
+  
+# Calling DataFrame constructor on list
+df1 = pd.DataFrame(lst)
+df1
 
 st.subheader('Prediction')
 #st.write(iris.target_names[prediction])
