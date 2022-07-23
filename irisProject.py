@@ -3,10 +3,9 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
 st.write("""
-## 🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼
+## 🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼
 # Simple Iris Flower Prediction App
-## 🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼
-         🌸🌸This app predicts the **Iris flower** type!🌸🌸
+🌸🌸This app predicts the **Iris flower** type!🌸🌸
 """)
 
 st.image('https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png')
