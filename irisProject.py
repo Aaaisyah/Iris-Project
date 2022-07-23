@@ -9,8 +9,6 @@ This app predicts the **Iris flower** type!
 
 st.image('https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png')
 
-st.sidebar.header('User Input Parameters')
-
 def user_input_features():
     sepal_length = st.sidebar.slider('Sepal length', 4.3, 7.9, 5.4)
     sepal_width = st.sidebar.slider('Sepal width', 2.0, 4.4, 3.4)
@@ -25,29 +23,40 @@ def user_input_features():
 
 df = user_input_features()
 
-st.subheader('User Input parameters')
-st.write(df)
+tab1, tab2, tab3 = st.tabs(["Class Species", "User Input Parameters", "Prediction Results"])
 
-iris = pd.read_csv('https://raw.githubusercontent.com/Aaaisyah/Iris-Project/main/IRIS.csv')
-X = iris.drop('species',axis=1)
-Y = iris.species
+with tab1:
+   
+    st.subheader('Class labels and their corresponding index number')
 
-clf = RandomForestClassifier()
-clf.fit(X, Y)
+    lst = ['Iris-setosa','Iris-versicolor','Iris-virginica']
 
-prediction = clf.predict(df)
-prediction_proba = clf.predict_proba(df)
+    df1 = pd.DataFrame(lst, index =['0', '1', '2'], columns =['Species'])
+    df1
 
-st.subheader('Class labels and their corresponding index number')
 
-lst = ['Iris-setosa','Iris-versicolor','Iris-virginica']
+with tab2:
+    
+    st.subheader('User Input parameters')
+    st.write(df)
 
-df1 = pd.DataFrame(lst, index =['a', 'b', 'c'], columns =['Species'])
-df1
+    iris = pd.read_csv('https://raw.githubusercontent.com/Aaaisyah/Iris-Project/main/IRIS.csv')
+    X = iris.drop('species',axis=1)
+    Y = iris.species
 
-st.subheader('Prediction')
-#st.write(iris.target_names[prediction])
-st.write(pd.DataFrame(prediction, columns =['Species']))
+    clf = RandomForestClassifier()
+    clf.fit(X, Y)
 
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
+    prediction = clf.predict(df)
+    prediction_proba = clf.predict_proba(df)
+
+with tab3:
+    
+    st.subheader('Prediction')
+    #st.write(iris.target_names[prediction])
+    st.write(pd.DataFrame(prediction, columns =['Species']))
+
+    st.subheader('Prediction Probability')
+    st.write(prediction_proba)
+    
+    
